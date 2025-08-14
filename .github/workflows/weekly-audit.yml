@@ -1,0 +1,28 @@
+name: Weekly SEO/Perf Audit
+on:
+  schedule:
+    - cron: '0 5 * * 1'  # Mondays 05:00 UTC
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci || npm install
+      - name: Crawl prod for broken links/images
+        run: node scripts/crawl.js
+        env:
+          ORIGIN: https://goswd.com
+      - name: Headers check
+        run: node scripts/headers-check.js
+        env:
+          ORIGIN: https://goswd.com
+      - name: PageSpeed budgets
+        run: node scripts/psi.js
+        env:
+          ORIGIN: https://goswd.com
+

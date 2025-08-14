@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sharpswebdesign.com/sitemap.xml
+
+# Disallow common admin and system files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow CSS and JS files for better crawling
+Allow: /*.css
+Allow: /*.js

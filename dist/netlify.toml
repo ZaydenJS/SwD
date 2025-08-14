@@ -1,0 +1,79 @@
+# Netlify configuration for goswd.com (backend-only SEO/perf)
+
+[build]
+  # We'll add a build script in PR1 to generate dist with robots/sitemap/canonicals
+  command = "node build/build.js"
+  publish = "dist"
+
+# Enforce no trailing slash (canonical paths like /about, not /about/)
+trailingSlash = "never"
+
+# Global security headers
+[[headers]]
+  for = "/**"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), fullscreen=*, payment=()"
+    X-XSS-Protection = "0"
+
+# Caching: HTML short revalidate; assets immutable
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Preview deploys: prevent indexing by default
+# Netlify sets DEPLOY_PRIME_URL and CONTEXT=deploy-preview for previews
+# We add an X-Robots-Tag header on all preview builds using a condition
+[context.deploy-preview]
+  [[context.deploy-preview.headers]]
+    for = "/**"
+    [context.deploy-preview.headers.values]
+      X-Robots-Tag = "noindex, nofollow, noarchive"
+
+# Redirects
+# Force HTTPS
+[[redirects]]
+  from = "http://goswd.com/*"
+  to = "https://goswd.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.goswd.com/*"
+  to = "https://goswd.com/:splat"
+  status = 301
+  force = true
+
+# Force non-www on HTTPS
+[[redirects]]
+  from = "https://www.goswd.com/*"
+  to = "https://goswd.com/:splat"
+  status = 301
+  force = true
+
+# Optional: collapse multiple slashes (//path -> /path)
+[[redirects]]
+  from = "//:splat"
+  to = "/:splat"
+  status = 301
+  force = true
+

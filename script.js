@@ -321,10 +321,11 @@ This is an automated response. Please don't reply to this email - we'll contact 
 
 // Create Google Form URL with prefilled data
 function createGoogleFormURL(data) {
-  // Your actual Google Form ID
-  const formId = "1FAIpQLScjXbzAdQaZ9xz0S02Ut9YvQCHK_w3kWTqWgr1mJl5Y1PHgqA";
+  // Google Form URL (updated)
+  const baseFormURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSd9BYhd4VooMs1CreiSEqs2RClK5gyT6ZLV_Kwky38kKqZw0Q/viewform?usp=dialog";
 
-  let formURL = `https://docs.google.com/forms/d/e/${formId}/viewform?usp=pp_url`;
+  let formURL = baseFormURL;
 
   // Add prefilled parameters (replace with your actual field IDs from Google Form)
   if (data.name)

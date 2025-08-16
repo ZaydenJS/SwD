@@ -199,7 +199,7 @@ a:hover {
   text-shadow: var(--glow-blue);
 }
 
-a.glow-link::after {
+a.glow-link::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -207,11 +207,14 @@ a.glow-link::after {
   width: 0;
   height: 2px;
   background: var(--gradient-accent);
-  transition: width 0.3s ease;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--glow-cyan);
+  z-index: -1;
 }
 
-a.glow-link:hover::after {
+a.glow-link:hover::before,
+a.glow-link:focus::before,
+a.glow-link:active::before {
   width: 100%;
 }
 
@@ -708,6 +711,21 @@ a.glow-link:hover::after {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
   }
+
+  /* Ensure direct connect buttons stay same size on mobile */
+  .direct-connect-options .btn-small {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.85rem !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+    width: 110px !important;
+    flex: none !important;
+    box-sizing: border-box !important;
+  }
+
+  .direct-connect-options {
+    gap: 0.5rem !important;
+  }
   .card {
     padding: 1.5rem;
     text-align: center;
@@ -720,6 +738,22 @@ a.glow-link:hover::after {
   .card .service-icon,
   .card .service-link {
     text-align: center;
+  }
+
+  /* Enhanced mobile touch interactions for service links */
+  .service-link {
+    -webkit-tap-highlight-color: rgba(59, 240, 228, 0.2);
+    tap-highlight-color: rgba(59, 240, 228, 0.2);
+    touch-action: manipulation;
+  }
+
+  /* Mobile touch states */
+  .service-link:active {
+    transform: translateX(5px) scale(0.98);
+  }
+
+  .service-link:active::after {
+    transform: translateX(5px) scale(0.98);
   }
 
   .card .service-icon {
@@ -912,24 +946,30 @@ a.glow-link:hover::after {
   padding-top: 1rem;
   color: var(--accent-cyan);
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   text-shadow: var(--glow-cyan);
+  text-decoration: none;
 }
 
 .service-link::after {
   content: "→";
   margin-left: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
 }
 
-.service-link:hover {
+.service-link:hover,
+.service-link:focus,
+.service-link:active {
   color: var(--accent-blue);
   text-shadow: var(--glow-intense-blue);
   transform: translateX(5px);
 }
 
-.service-link:hover::after {
+.service-link:hover::after,
+.service-link:focus::after,
+.service-link:active::after {
   transform: translateX(5px);
   text-shadow: var(--glow-intense-blue);
 }
@@ -943,6 +983,15 @@ a.glow-link:hover::after {
 #services-overview .card p,
 #services-overview .card .service-link {
   text-align: center;
+}
+
+/* Ensure all three service descriptions start at the same Y level on desktop */
+@media (min-width: 768px) {
+  #services-overview .grid-3 .card h3 {
+    line-height: 1.2; /* normalize line height */
+    min-height: 2.6em; /* reserve ~2 lines of space for titles */
+    margin-bottom: 0.75rem; /* consistent spacing below the title */
+  }
 }
 
 /* Background Gradient Section */
@@ -1197,6 +1246,15 @@ a.glow-link:hover::after {
   flex-grow: 1;
 }
 
+/* Align descriptions across Why Choose Us feature cards on desktop */
+@media (min-width: 768px) {
+  #why-choose-us .feature-card h4 {
+    line-height: 1.25;
+    min-height: 2.6em;
+    margin-bottom: 0.75rem;
+  }
+}
+
 .feature-badge {
   display: inline-block;
   background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
@@ -1204,6 +1262,7 @@ a.glow-link:hover::after {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
+
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -2849,6 +2908,12 @@ a.glow-link:hover::after {
   margin-bottom: 0.5rem;
 }
 
+/* Prevent broken lines like "+18–\n35%" in Expected Results */
+.seo-metrics.expected-results .metric-number {
+  white-space: nowrap;
+  word-break: keep-all; /* do not wrap at dashes */
+}
+
 .metric-label {
   color: var(--text-secondary);
   font-weight: 500;
@@ -3232,9 +3297,60 @@ a.glow-link:hover::after {
 .seo-metrics .metrics-grid {
   margin-top: 0; /* sit flush with the heading's top */
 }
+
+/* Desktop layout tweaks for Expected Results */
+.seo-metrics.expected-results .metrics-grid {
+  flex: 1; /* allow grid to use remaining row space next to the heading */
+  min-width: 0; /* prevent shrinking that causes cramped columns */
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
 /* Avoid clipping of numbers/labels */
 .seo-metrics .metric-item {
   overflow: visible;
+}
+
+/* Desktop: compact the SEO section to match others */
+@media (min-width: 769px) {
+  /* 1) Place Expected Results metrics directly under the heading in a tight row */
+  #seo .seo-metrics.expected-results {
+    display: grid;
+    grid-template-columns: 1fr; /* heading on its own row */
+    row-gap: 0.75rem;
+    align-items: start;
+    justify-items: start; /* align with left shift */
+    padding-top: 1rem;
+  }
+  #seo .seo-metrics.expected-results h3 {
+    margin: 0; /* keep tight */
+    white-space: nowrap;
+  }
+  #seo .seo-metrics.expected-results .metrics-grid {
+    margin-top: 0.25rem; /* sit right under the heading */
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 1.5rem; /* slightly tighter than default */
+    justify-items: center; /* center each metric card content */
+  }
+
+  /* 2) Thinner separator above Expected Results */
+  #seo .seo-metrics.expected-results {
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* thinner, subtler line */
+  }
+
+  /* 3) Shift entire SEO content left and slightly narrow width to match other sections */
+  #seo .service-content {
+    grid-template-columns: 1.1fr 0.9fr; /* give text a touch more width */
+    column-gap: 3rem; /* more compact spacing */
+  }
+  #seo .service-text {
+    max-width: 640px; /* keep text column compact like others */
+    margin-left: 0; /* ensure left alignment */
+  }
+  #seo .service-text .service-description.desktop-only {
+    max-width: 56ch; /* concise line length */
+  }
 }
 
 .seo-metric {
@@ -3584,6 +3700,18 @@ a.glow-link:hover::after {
   font-size: 0.9rem;
   flex: 1;
   max-width: 120px;
+  min-width: 120px;
+  width: 120px;
+}
+
+/* Force direct connect buttons to be exactly the same size */
+.direct-connect-options .btn {
+  min-width: 120px !important;
+  max-width: 120px !important;
+  width: 120px !important;
+  flex: none !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
 }
 
 /* Normalize option-benefits size and alignment across cards on desktop */
@@ -6472,11 +6600,114 @@ a.glow-link:hover::after {
     text-align: center;
   }
 
-  /* SEO inline metrics row */
+  /* SEO mobile layout: strict vertical order and centering */
   .seo-metrics {
-    justify-content: center !important;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+    text-align: center;
+  }
+
+  /* Ensure no horizontal scroll within SEO section */
+  #seo {
+    overflow-x: hidden;
+  }
+
+  /* Preserve the exact order visually and center each piece */
+  #seo .service-icon-large {
+    margin: 0 auto 0.75rem;
+    text-align: center;
+  }
+  #seo .service-text h2 {
+    margin: 0 0 0.5rem;
+  }
+  #seo .service-description {
+    margin: 0 auto 1.25rem;
+    max-width: 48ch;
+  }
+  #seo .service-image-inline {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1.25rem;
+  }
+  #seo .service-features {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  #seo .service-features h3 {
+    margin-bottom: 0.5rem;
+  }
+  #seo .service-features ul {
+    display: inline-block;
+    text-align: left; /* keep bullets aligned while list is centered */
+    padding-left: 1.1rem;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+
+  /* Expected Results spacing and centering */
+  #seo .seo-metrics {
+    text-align: center;
+  }
+  #seo .seo-metrics h3 {
+    white-space: normal; /* override desktop nowrap to avoid overflow */
+    margin: 0 0 0.5rem;
+  }
+  #seo .seo-metrics.expected-results {
+    margin-top: 1rem;
+  }
+  #seo .seo-metrics.expected-results .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr !important; /* override desktop 3-col layout */
+    row-gap: 0.75rem;
+    justify-items: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  #seo .seo-metrics.expected-results .metric-item {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* Perfect centering for SEO optimization section on mobile only */
+  #seo .service-text {
+    text-align: center;
+  }
+
+  #seo .service-text h2,
+  #seo .service-text .service-description,
+  #seo .service-features h3,
+  #seo .seo-metrics.expected-results h3 {
+    text-align: center;
+  }
+
+  #seo .service-features {
+    text-align: center;
+  }
+
+  #seo .service-features ul {
+    text-align: center;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 280px;
+  }
+
+  #seo .service-features li {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  #seo .seo-metrics.expected-results {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  #seo .seo-metrics.expected-results .metrics-grid {
+    justify-content: center;
     text-align: center;
   }
 
@@ -6523,6 +6754,16 @@ a.glow-link:hover::after {
   }
 }
 
+/* Desktop-only visibility for concise SEO description */
+.desktop-only {
+  display: none;
+}
+@media (min-width: 769px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
 /* Mobile-only inline service image placement */
 .mobile-only {
   display: none;
@@ -6532,6 +6773,17 @@ a.glow-link:hover::after {
     display: block;
   }
   /* Hide the original right-column mockup for the Web Design section only on mobile */
+
+  /* Desktop-only helpers */
+  @media (min-width: 769px) {
+    .desktop-only {
+      display: block;
+    }
+    .mobile-only {
+      display: none !important;
+    }
+  }
+
   #web-design .service-image {
     display: none;
   }

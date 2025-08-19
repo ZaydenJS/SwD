@@ -1396,10 +1396,23 @@ main > section:not(:first-child) {
   text-shadow: none;
 }
 
+/* Services Page Only: Smaller launch badge to match text size */
+.consultation-process .launch-badge {
+  font-size: 1.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+}
+
 /* Launch Badge - Mobile: restore original size */
 @media (max-width: 768px) {
   .launch-badge {
     font-size: 1.15rem;
+  }
+
+  .consultation-process .launch-badge {
+    font-size: 1.15rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
   }
 }
 
@@ -3937,6 +3950,33 @@ main > section:not(:first-child) {
   letter-spacing: 0.5px;
 }
 
+/* Desktop only: Align step-duration text at same y-level */
+@media (min-width: 769px) {
+  .process-steps {
+    align-items: flex-end;
+  }
+
+  .process-step {
+    height: 100%;
+    align-items: stretch;
+  }
+
+  .step-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .step-content p {
+    flex: 1;
+  }
+
+  .step-duration {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+}
+
 .process-guarantee {
   margin-top: 3rem;
   padding: 2rem;
@@ -5986,6 +6026,7 @@ main > section:not(:first-child) {
   color: var(--primary-dark);
   font-size: 1.3rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .social-contact .social-links {

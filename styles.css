@@ -3950,28 +3950,28 @@ main > section:not(:first-child) {
   letter-spacing: 0.5px;
 }
 
-/* Desktop only: Align step-duration text at same y-level */
+/* Desktop only: Align step-duration text at same y-level - Services page only */
 @media (min-width: 769px) {
-  .process-steps {
+  .consultation-process .process-steps {
     align-items: flex-end;
   }
 
-  .process-step {
+  .consultation-process .process-step {
     height: 100%;
     align-items: stretch;
   }
 
-  .step-content {
+  .consultation-process .step-content {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  .step-content p {
+  .consultation-process .step-content p {
     flex: 1;
   }
 
-  .step-duration {
+  .consultation-process .step-duration {
     margin-top: auto;
     align-self: flex-start;
   }

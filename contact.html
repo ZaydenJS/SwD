@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact SwD - Sharpy's Web Designs for your next digital transformation. Get custom-built, performance-optimized web experiences. Free consultation available."
+    />
+    <meta
+      name="keywords"
+      content="contact SwD, futuristic web design, custom websites, performance optimization, digital dominance consultation"
+    />
+    <meta name="author" content="SwD - Sharpy's Web Designs" />
+    <!-- Mobile UI theme color -->
+    <meta name="theme-color" content="#0D0D0D" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//calendly.com" />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      />
+    </noscript>
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Contact SwD - Futuristic Web Design Agency"
+    />
+    <meta
+      property="og:description"
+      content="Launch your digital transformation with SwD. Custom-built, performance-optimized web experiences. Free consultation available."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>
+      Contact SwD - Launch Your Digital Transformation | Sharpy's Web Designs
+    </title>
+
+    <!-- Stylesheets: load non-blocking -->
+    <!-- Critical CSS (inline) -->
+    <style>
+      :root {
+        --bg-ultra-dark: #0d0d0d;
+        --text-primary: #f5f5f5;
+        --text-secondary: #a0aec0;
+        --accent-cyan: #3bf0e4;
+      }
+      html,
+      body {
+        background: #0d0d0d;
+        color: #a0aec0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 13, 0.95);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(59, 240, 228, 0.3);
+        z-index: 1002;
+      }
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+      }
+      .nav-menu {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+          list-style: none;
+        }
+        .nav-menu a {
+          color: #f5f5f5;
+          text-decoration: none;
+          padding: 0.75rem 1.25rem;
+          border: 1px solid transparent;
+        }
+      }
+      .page-hero {
+        padding-top: 88px;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.25rem;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 2px solid transparent;
+      }
+      .btn-primary {
+        background: var(--accent-cyan);
+        color: #000;
+        font-weight: 800;
+      }
+    </style>
+
+    <link rel="preload" as="style" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html">SwD<span>.</span></a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content fade-in">
+            <h1>Launch Your <span class="highlight">Transformation</span></h1>
+            <p>
+              Ready for digital <span class="highlight">dominance</span>? Let's
+              engineer your <span class="code-text">custom-built</span> solution
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section contact-section">
+        <div class="container">
+          <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="contact-form-container fade-in">
+              <h2>Send Us a Message</h2>
+              <p>
+                Fill out the form below and we'll get back to you within 24
+                hours.
+              </p>
+
+              <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" />
+                  </div>
+                  <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="service">Service Interested In</label>
+                  <select id="service" name="service">
+                    <option value="">Select a service</option>
+                    <option value="web-design">Custom Web Design</option>
+                    <option value="ui-ux">UI/UX Design</option>
+                    <option value="ecommerce">E-commerce Development</option>
+                    <option value="seo">SEO Optimization</option>
+                    <option value="backend">Backend Integration</option>
+                    <option value="maintenance">Website Maintenance</option>
+                    <option value="consultation">Consultation Only</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="budget">Project Budget</label>
+                  <select id="budget" name="budget">
+                    <option value="">Select budget range</option>
+                    <option value="aud-0-2000">AUD 0 - 2,000</option>
+                    <option value="aud-2000-5000">AUD 2,000 - 5,000</option>
+                    <option value="aud-5000-10000">AUD 5,000 - 10,000</option>
+                    <option value="aud-10000-plus">10,000+</option>
+                    <option value="not-set-yet">Not set yet</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="timeline">Project Timeline</label>
+                  <select id="timeline" name="timeline">
+                    <option value="">Select timeline</option>
+                    <option value="asap">ASAP</option>
+                    <option value="1-week">1 Week</option>
+                    <option value="2-weeks">2 Weeks</option>
+                    <option value="3-weeks">3 Weeks</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Project Details *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Tell us about your project, goals, and any specific requirements..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-container fade-in">
+              <h2>Contact Information</h2>
+              <p>
+                Prefer to reach out directly? Here are all the ways you can
+                contact us.
+              </p>
+
+              <div class="contact-methods">
+                <div class="contact-method email-method" data-email="contact">
+                  <div class="method-icon">📧</div>
+                  <div class="method-content">
+                    <h3>Email</h3>
+                    <p>Sharpyswebdesigns@gmail.com</p>
+                    <span>We respond within 24 hours</span>
+                  </div>
+                </div>
+
+                <div
+                  class="contact-method booking-method"
+                  onclick="openCalendly()"
+                >
+                  <div class="method-icon">📅</div>
+                  <div class="method-content">
+                    <h3>Book Consultation</h3>
+                    <p>Schedule a free 30-minute Zoom consultation</p>
+                    <span>Available Mon-Fri, 9AM-6PM AEST</span>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="method-icon">📞</div>
+                  <div class="method-content">
+                    <h3>Phone</h3>
+                    <p>0459 437 764</p>
+                    <span>Mon-Fri, 9AM-6PM AEST</span>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="method-icon">📍</div>
+                  <div class="method-content">
+                    <h3>Service Area</h3>
+                    <p>Sydney, NSW<br />Australia</p>
+                    <span>Remote consultations available</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-contact">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61579762735431"
+                    aria-label="Facebook"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >📘 Facebook</a
+                  >
+                  <a
+                    href="https://www.instagram.com/sharpyswebdesigns/"
+                    aria-label="Instagram"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >📷 Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section bg-light">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Frequently Asked Questions</h2>
+            <p>
+              Quick answers to common questions about our services and process
+            </p>
+          </div>
+
+          <div class="faq-container">
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <h4>How long does it take to build a website?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  The timeline depends on the complexity of your project. Full
+                  custom websites with mobile and PC optimization take anywhere
+                  from 4-14 days. While ecommerce websites and full booking
+                  system websites may take anywhere from 1-3 weeks. We'll
+                  provide a detailed timeline during our initial consultation.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <h4>What's included in your web design service?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Every build is custom‑engineered for your brand: responsive
+                  design, high‑performance development, CMS setup, and 3 months
+                  of post‑launch support. We handle everything end‑to‑end —
+                  including secure hosting recommendations and domain setup — no
+                  handoff.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <h4>Do you provide ongoing maintenance?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes! We offer ongoing maintenance packages that include
+                  security updates, content updates, performance monitoring, and
+                  technical support. Our maintenance plans start at $50/month
+                  and can be customized to your needs.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <h4>Can you help with SEO and digital marketing?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Absolutely! We offer
+                  <span class="highlight">technical full‑backend SEO</span> as
+                  an optional add‑on and can extend with advanced SEO services,
+                  content strategy, and conversion optimization as needed.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item fade-in">
+              <div class="faq-question">
+                <h4>What if I need changes after the website is live?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We include
+                  <span class="highlight">3 months of post‑launch support</span>
+                  with every project for minor changes and updates. After that,
+                  choose a maintenance plan starting at
+                  <span class="highlight">$50/month</span> or request larger
+                  updates via our streamlined change request process.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section cta-section">
+        <div class="container">
+          <div class="cta-content fade-in text-center">
+            <h2>Ready to Get Started?</h2>
+            <p>
+              Schedule a free consultation to discuss your project and see how
+              we can help.
+            </p>
+            <div class="cta-buttons">
+              <a href="#contact-form" class="btn btn-primary">Send Message</a>
+              <a href="tel:0459437764" class="btn btn-secondary">Call Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="logo">SwD<span>.</span></div>
+            <p>
+              Engineering digital
+              <span class="highlight">dominance</span> through custom-built,
+              performance-optimized web experiences.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/profile.php?id=61579762735431"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📘</a
+              >
+              <a
+                href="https://www.instagram.com/sharpyswebdesigns/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📷</a
+              >
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#web-design">Web Design</a></li>
+              <li><a href="services.html#ui-ux">UI/UX Design</a></li>
+              <li><a href="services.html#seo">SEO Optimization</a></li>
+              <li><a href="services.html#backend">Backend Integration</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p>
+                📧 <span data-email="contact">Sharpyswebdesigns@gmail.com</span>
+              </p>
+              <p class="booking-consultation" onclick="openCalendly()">
+                📅
+                <span
+                  style="
+                    cursor: pointer;
+                    color: var(--accent-cyan);
+                    text-decoration: underline;
+                  "
+                  >Book Consultation</span
+                >
+              </p>
+              <p>📞 0459 437 764</p>
+              <p>📍 Sydney, NSW, Australia</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="abn">ABN 84 684 902 339</p>
+          <p>
+            &copy; 2025 SwD - Sharpy's Web Designs.
+            <span class="highlight">Engineered</span> for dominance.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

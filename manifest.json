@@ -1,0 +1,24 @@
+{
+  "name": "SwD - Sharpy's Web Designs | Futuristic Web Design Agency",
+  "short_name": "SwD",
+  "description": "Engineering digital dominance through custom-built, performance-optimized web experiences. Futuristic design meets conversion optimization.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0D",
+  "theme_color": "#3BF0E4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "design"],
+  "lang": "en-US"
+}

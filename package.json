@@ -1,0 +1,48 @@
+{
+  "name": "swd-seo-perf-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend-only SEO and performance automation for SwD static site (build, validate, optimize, submit).",
+  "type": "module",
+  "scripts": {
+    "clean": "node -e \"import('fs').then(fs=>{fs.rmSync('dist',{recursive:true,force:true});console.log('cleaned dist')})\"",
+    "build": "node scripts/build.js && node scripts/enrich-head.js && node scripts/generate-icons.js && node scripts/generate-robots.js && node scripts/generate-sitemap.js && node scripts/generate-image-sitemap.js && node scripts/generate-headers.js && node scripts/hash-assets.js && node scripts/add-noscript-images.js && node scripts/hardening-anchors.js && node scripts/transform-iframes.js && node scripts/preload-fonts.js && node scripts/ensure-font-display-swap.js",
+    "lint:html": "node scripts/validate-html.js && node scripts/validate-seo.js && node scripts/validate-duplicates.js && node scripts/validate-links.js && node scripts/validate-canonical.js && node scripts/validate-og-twitter.js && node scripts/validate-structured-data.js && node scripts/validate-preloads.js && node scripts/validate-lang-hreflang.js && node scripts/validate-images.js",
+    "seo:sitemaps": "node scripts/generate-sitemap.js",
+    "seo:robots": "node scripts/generate-robots.js",
+    "seo:schemas": "node scripts/validate-schema.js",
+    "perf:images": "node scripts/optimize-images.js && node scripts/generate-responsive-images.js && node scripts/rewrite-images-responsive.js",
+    "perf:rewrite-images": "node scripts/rewrite-images.js",
+    "perf:dimensions": "node scripts/enforce-image-dimensions.js",
+    "perf:critical": "node scripts/critical-css.js",
+    "perf:purgecss": "node scripts/purge-css.js",
+    "perf:alts": "node scripts/ensure-image-alt.js",
+    "psi": "node scripts/psi.js",
+    "crawl": "node scripts/crawl.js",
+    "headers:check": "node scripts/headers-check.js",
+    "submit:sitemap": "node scripts/submit-sitemap.js",
+    "ci:pr": "npm run build && npm run lint:html && npm run seo:schemas",
+    "ci:main": "npm run build && npm run perf:images && npm run perf:rewrite-images && npm run perf:critical && npm run seo:schemas && npm run psi"
+  },
+  "dependencies": {
+    "@axe-core/puppeteer": "^4.8.0",
+    "cheerio": "^1.0.0",
+    "critical": "^5.2.0",
+    "csso": "^5.0.5",
+    "fast-xml-parser": "^4.4.1",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.1",
+    "googleapis": "^131.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "lighthouse": "^11.7.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^22.10.0",
+    "purgecss": "^6.0.0",
+    "sharp": "^0.33.3",
+    "sitemap": "^8.0.0",
+    "terser": "^5.31.0"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.13.0"
+  }
+}

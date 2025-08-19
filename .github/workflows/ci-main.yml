@@ -1,0 +1,30 @@
+name: Main Build & Validate
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci || npm install
+      - run: npm run build
+        env:
+          ORIGIN: https://goswd.com
+      - run: npm run perf:images && npm run perf:rewrite-images && npm run perf:dimensions
+      - run: npm run perf:purgecss && npm run perf:critical
+      - run: npm run seo:schemas && npm run lint:html && node scripts/validate-headers.js && node scripts/validate-csp.js
+      - run: npm run psi
+        env:
+          ORIGIN: https://goswd.com
+      - run: node scripts/submit-sitemap.js
+        env:
+          ORIGIN: https://goswd.com
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist

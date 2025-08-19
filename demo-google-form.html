@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Google Form - SwD Project Brief</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3bf0e4;
+        }
+        .header h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #3bf0e4;
+        }
+        .section h3 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .field {
+            margin-bottom: 15px;
+        }
+        .field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .field input, .field select, .field textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .field textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+        }
+        .required {
+            color: #e74c3c;
+        }
+        .note {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        .note h4 {
+            margin: 0 0 10px 0;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <h1>SwD Project Brief</h1>
+            <p>Help us understand your project better so we can provide the most accurate quote and timeline.</p>
+        </div>
+
+        <div class="note">
+            <h4>📋 How to Create This in Google Forms:</h4>
+            <p>1. Go to <strong>forms.google.com</strong><br>
+            2. Create a new form<br>
+            3. Copy the sections and questions below<br>
+            4. Get your Form ID and Field IDs<br>
+            5. Update your code with the actual IDs</p>
+        </div>
+
+        <form>
+            <div class="section">
+                <h3>Contact Information (Pre-filled from Step 1)</h3>
+                <div class="field">
+                    <label>Full Name <span class="required">*</span></label>
+                    <input type="text" placeholder="Will be pre-filled from contact form" readonly>
+                </div>
+                <div class="field">
+                    <label>Email Address <span class="required">*</span></label>
+                    <input type="email" placeholder="Will be pre-filled from contact form" readonly>
+                </div>
+                <div class="field">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Will be pre-filled from contact form" readonly>
+                </div>
+                <div class="field">
+                    <label>Company Name</label>
+                    <input type="text" placeholder="Will be pre-filled from contact form" readonly>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Project Type & Goals</h3>
+                <div class="field">
+                    <label>What type of website do you need? <span class="required">*</span></label>
+                    <select>
+                        <option>Business/Corporate Website</option>
+                        <option>E-commerce Store</option>
+                        <option>Portfolio/Creative Site</option>
+                        <option>Blog/Content Site</option>
+                        <option>Landing Page</option>
+                        <option>Web Application</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>What's your primary goal? <span class="required">*</span></label>
+                    <select>
+                        <option>Increase sales/conversions</option>
+                        <option>Build brand awareness</option>
+                        <option>Showcase portfolio</option>
+                        <option>Generate leads</option>
+                        <option>Provide information</option>
+                        <option>Sell products online</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Technical Requirements</h3>
+                <div class="field">
+                    <label>Which features do you need? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="contact-forms">
+                            <label for="contact-forms">Contact Forms</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="booking">
+                            <label for="booking">Online Booking</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ecommerce">
+                            <label for="ecommerce">E-commerce</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="user-accounts">
+                            <label for="user-accounts">User Accounts</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cms">
+                            <label for="cms">Content Management</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="search">
+                            <label for="search">Search Functionality</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="social">
+                            <label for="social">Social Media Integration</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="email-marketing">
+                            <label for="email-marketing">Email Marketing</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="analytics">
+                            <label for="analytics">Analytics Tracking</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="seo">
+                            <label for="seo">SEO Optimization</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Design & Branding</h3>
+                <div class="field">
+                    <label>Do you have existing branding?</label>
+                    <select>
+                        <option>Yes, complete brand guidelines</option>
+                        <option>Yes, basic logo/colors</option>
+                        <option>Some elements, need refinement</option>
+                        <option>No, need complete branding</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Design style preference</label>
+                    <select>
+                        <option>Modern/Minimalist</option>
+                        <option>Bold/Creative</option>
+                        <option>Professional/Corporate</option>
+                        <option>Elegant/Luxury</option>
+                        <option>Fun/Playful</option>
+                        <option>Industry-specific</option>
+                        <option>Not sure, need guidance</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Color preferences (if any)</label>
+                    <input type="text" placeholder="e.g., Blue and white, or 'no preference'">
+                </div>
+                <div class="field">
+                    <label>Websites you like (URLs or descriptions)</label>
+                    <textarea placeholder="Share examples of websites you admire and why..."></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Content & Timeline</h3>
+                <div class="field">
+                    <label>Do you have content ready?</label>
+                    <select>
+                        <option>Yes, all content is ready</option>
+                        <option>Partially, some content ready</option>
+                        <option>No, need help with content creation</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>When do you need this completed? <span class="required">*</span></label>
+                    <select>
+                        <option>ASAP (Rush job)</option>
+                        <option>Within 1 week</option>
+                        <option>Within 2 weeks</option>
+                        <option>Within 1 month</option>
+                        <option>Flexible timeline</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Additional Information</h3>
+                <div class="field">
+                    <label>Tell us more about your business</label>
+                    <textarea placeholder="What do you do? Who are your customers? What makes you unique?"></textarea>
+                </div>
+                <div class="field">
+                    <label>Specific requirements or questions</label>
+                    <textarea placeholder="Any specific functionality, integrations, or concerns?"></textarea>
+                </div>
+                <div class="field">
+                    <label>How did you hear about us?</label>
+                    <select>
+                        <option>Google Search</option>
+                        <option>Social Media</option>
+                        <option>Referral</option>
+                        <option>Previous Client</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <div class="note">
+            <h4>🚀 Next Steps After Creating This Form:</h4>
+            <p>1. Get your Google Form ID<br>
+            2. Get each field's entry ID<br>
+            3. Update script.js with the real IDs<br>
+            4. Test the complete flow<br>
+            5. Your two-step lead intake is ready!</p>
+        </div>
+    </div>
+</body>
+</html>

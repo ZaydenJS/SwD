@@ -1,0 +1,26 @@
+name: PR SEO & Performance Checks
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pr-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci || npm install
+      - run: npm run build
+        env:
+          ORIGIN: https://goswd.com
+      - run: npm run lint:html
+      - run: npm run seo:schemas
+      - run: npm run perf:images
+      - name: Artifact dist
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+

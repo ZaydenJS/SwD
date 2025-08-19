@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn about Sharp's Web Design - our story, mission, values, and the expert team behind premium web design services for small businesses and startups."
+    />
+    <meta
+      name="keywords"
+      content="about Sharp's Web Design, web design team, company story, mission, values, expertise, professional web designers"
+    />
+    <meta name="author" content="Sharp's Web Design" />
+    <!-- Mobile UI theme color -->
+    <meta name="theme-color" content="#0D0D0D" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//calendly.com" />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+      />
+    </noscript>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us - Sharp's Web Design" />
+    <meta
+      property="og:description"
+      content="Meet the team behind Sharp's Web Design and learn about our mission to create exceptional digital experiences."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>About Us - Meet the Team | Sharp's Web Design</title>
+
+    <!-- Critical CSS (inline) -->
+    <style>
+      :root {
+        --bg-ultra-dark: #0d0d0d;
+        --text-primary: #f5f5f5;
+        --text-secondary: #a0aec0;
+        --accent-cyan: #3bf0e4;
+        --bg-glass: rgba(255, 255, 255, 0.05);
+      }
+      html,
+      body {
+        background: #0d0d0d;
+        color: #a0aec0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 13, 0.95);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(59, 240, 228, 0.3);
+        z-index: 1002;
+      }
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+      }
+      .logo {
+        font-weight: 700;
+        color: #f5f5f5;
+      }
+      .logo span {
+        color: var(--accent-cyan);
+      }
+      .nav-menu {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+          list-style: none;
+        }
+        .nav-menu a {
+          color: #f5f5f5;
+          text-decoration: none;
+          padding: 0.75rem 1.25rem;
+          border: 1px solid transparent;
+        }
+      }
+      .hero,
+      .page-hero {
+        padding-top: 88px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.25rem;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 2px solid transparent;
+      }
+      .btn-primary {
+        background: var(--accent-cyan);
+        color: #000;
+        font-weight: 800;
+      }
+      .btn-outline {
+        border: 2px solid var(--accent-cyan);
+        color: #f5f5f5;
+      }
+    </style>
+
+    <!-- Stylesheets: load non-blocking -->
+    <link rel="preload" as="style" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html">SwD<span>.</span></a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content fade-in">
+            <h1>About <span class="highlight">SwD</span></h1>
+            <p>
+              Engineering digital
+              <span class="highlight">dominance</span> through futuristic design
+              and performance optimization since 2019
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Story -->
+      <section class="section">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-text fade-in">
+              <h2>Our <span class="highlight">Story</span></h2>
+              <p class="lead">
+                SwD is a web design studio that builds
+                <span class="highlight">custom‑built</span>,
+                performance‑engineered websites with a clean, modern aesthetic
+                that converts.
+              </p>
+
+              <!-- Mobile visual element placement -->
+              <div class="about-visual-mobile mobile-only">
+                <div class="visual-element">
+                  <div class="element-circle"></div>
+                  <div class="element-square"></div>
+                  <div class="element-triangle"></div>
+                </div>
+              </div>
+
+              <p>
+                We work fast and obsess over details. Most sites launch in
+                <span class="highlight">4–14 days</span>. We default to
+                call‑first (clear click‑to‑call and contact options), and can
+                layer in booking systems, email automations, and other
+                integrations as needed — all wrapped in simple, intuitive
+                navigation.
+              </p>
+              <p>
+                No templates. Every build is
+                <span class="highlight">100% custom</span> and lightweight by
+                default. Technical SEO and on‑page optimization are available
+                with our <span class="code-text">SEO services</span>. Layouts
+                are compact and sleek, with fully viewable images across
+                devices.
+              </p>
+              <p>
+                We’ve recently shipped
+                <span class="highlight">5 projects</span> across trades,
+                hospitality and salons. Explore them on the
+                <a href="portfolio.html" class="link">Recent Projects</a> page
+                and read the owners’ reviews on our home page.
+              </p>
+            </div>
+            <div class="about-image fade-in">
+              <div class="about-visual">
+                <div class="visual-element">
+                  <div class="element-circle"></div>
+                  <div class="element-square"></div>
+                  <div class="element-triangle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission & Values -->
+      <section class="section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Our Mission & Values</h2>
+            <p>The principles that guide everything we do</p>
+          </div>
+          <div class="values-grid">
+            <div class="value-card card fade-in">
+              <div class="value-icon">🎯</div>
+              <h3>Purpose-Driven Design</h3>
+              <p>
+                Every design decision we make serves a purpose - whether it's
+                improving user experience, increasing conversions, or
+                strengthening brand identity.
+              </p>
+            </div>
+            <div class="value-card card fade-in">
+              <div class="value-icon">🤝</div>
+              <h3>Client Partnership</h3>
+              <p>
+                We don't just work for our clients; we work with them. Your
+                success is our success, and we're committed to building
+                long-term relationships.
+              </p>
+            </div>
+            <div class="value-card card fade-in">
+              <div class="value-icon">⚡</div>
+              <h3>Innovation & Excellence</h3>
+              <p>
+                We stay ahead of industry trends and continuously improve our
+                skills to deliver cutting-edge solutions that exceed
+                expectations.
+              </p>
+            </div>
+            <div class="value-card card fade-in">
+              <div class="value-icon">🔍</div>
+              <h3>Attention to Detail</h3>
+              <p>
+                From pixel-perfect designs to clean code, we believe that
+                excellence lies in the details that others might overlook.
+              </p>
+            </div>
+            <div class="value-card card fade-in">
+              <div class="value-icon">📈</div>
+              <h3>Results-Focused</h3>
+              <p>
+                Beautiful design is just the beginning. We focus on creating
+                websites that drive measurable business results and ROI.
+              </p>
+            </div>
+            <div class="value-card card fade-in">
+              <div class="value-icon">🌱</div>
+              <h3>Continuous Growth</h3>
+              <p>
+                We're always learning, evolving, and adapting to new
+                technologies and methodologies to serve our clients better.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Meet Our Team</h2>
+            <p>The talented individuals behind Sharp's Web Design</p>
+          </div>
+          <div class="team-grid">
+            <div class="team-member card fade-in">
+              <div class="member-photo">
+                <div class="photo-placeholder">
+                  <span>MJ</span>
+                </div>
+              </div>
+              <div class="member-info">
+                <h3>Maria Johnson</h3>
+                <p class="member-role">Senior Developer</p>
+                <p class="member-bio">
+                  Maria brings over 4 years of full-stack development experience
+                  to the team. She specializes in creating fast, secure, and
+                  scalable web applications with modern technologies and best
+                  practices.
+                </p>
+                <div class="member-skills">
+                  <span class="skill-tag">React/Node.js</span>
+                  <span class="skill-tag">Database Design</span>
+                  <span class="skill-tag">Full-Stack Development</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-member card fade-in">
+              <div class="member-photo">
+                <div class="photo-placeholder">
+                  <span>ZS</span>
+                </div>
+              </div>
+              <div class="member-info">
+                <h3>Zayden Sharp</h3>
+                <p class="member-role">Founder & Lead Designer</p>
+                <p class="member-bio">
+                  With over 4 years of experience in web design and digital
+                  marketing, Zayden founded Sharp's Web Design to help
+                  businesses create impactful online presences. Specializes in
+                  UI/UX design and conversion optimization.
+                </p>
+                <div class="member-skills">
+                  <span class="skill-tag">UI/UX Design</span>
+                  <span class="skill-tag">Brand Strategy</span>
+                  <span class="skill-tag">Conversion Optimization</span>
+                </div>
+              </div>
+            </div>
+            <div class="team-member card fade-in">
+              <div class="member-photo">
+                <div class="photo-placeholder">
+                  <span>DJ</span>
+                </div>
+              </div>
+              <div class="member-info">
+                <h3>David Jones</h3>
+                <p class="member-role">SEO Specialist</p>
+                <p class="member-bio">
+                  David is our SEO expert with over 5 years of experience in
+                  digital marketing and search engine optimization. He ensures
+                  every website we build is optimized for maximum visibility and
+                  organic traffic.
+                </p>
+                <div class="member-skills">
+                  <span class="skill-tag">Analytics</span>
+                  <span class="skill-tag">SEO Strategy</span>
+                  <span class="skill-tag">Content Strategy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>
+              From <span class="highlight">Conversation</span> to
+              <span class="launch-badge">Launch</span>
+            </h2>
+            <p>
+              Our streamlined process ensures you get exactly what you need,
+              when you need it.
+            </p>
+          </div>
+          <div class="process-timeline">
+            <div class="timeline-item fade-in">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <h3>Kickoff &amp; Brief</h3>
+                <p class="timeline-duration">Form / Call / 30-min Zoom</p>
+                <p>
+                  We confirm goals, audience, colours, pages, and features. We
+                  collect ABN/ACN, contacts, domain, and brand assets, and ask
+                  smart follow-ups so nothing gets missed.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <h3>Design &amp; Build</h3>
+                <p class="timeline-duration">Action over wireframes</p>
+                <p>
+                  We get to work immediately and share a private preview once
+                  the core is in place; you tell us what you love and what to
+                  change, and we refine together until it’s pixel-perfect and
+                  exactly what you want.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <h3>Launch &amp; Ongoing Care</h3>
+                <p class="timeline-duration">Live, secure, supported</p>
+                <p>
+                  We publish your site, connect domain &amp; SSL, optimise speed
+                  and on-page SEO, wire forms/bookings, and set redirects &amp;
+                  analytics. You own your domain and content, no lock-in. Need
+                  changes? Send them anytime, typical turnaround 1–2 business
+                  days.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Our Commitment Section -->
+          <div class="commitment-section fade-in">
+            <div class="commitment-card">
+              <h3>💎 Premium Results, Rapid Delivery</h3>
+              <p class="commitment-text">
+                We move fast and deliver flawless-premium designs which are
+                engineered for performance, zero compromises.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Our Impact</h2>
+            <p>Numbers that reflect our commitment to excellence</p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card fade-in">
+              <div class="stat-number">5</div>
+              <div class="stat-label">Projects Completed</div>
+              <p>
+                Successfully delivered websites for businesses across various
+                industries
+              </p>
+            </div>
+            <div class="stat-card fade-in">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Client Satisfaction</div>
+              <p>
+                Our clients love working with us and often return for additional
+                projects
+              </p>
+            </div>
+            <div class="stat-card fade-in">
+              <div class="stat-number">4+</div>
+              <div class="stat-label">Years Experience</div>
+              <p>Over 4 years crafting high-performing digital experiences</p>
+            </div>
+            <div class="stat-card fade-in">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Support Available</div>
+              <p>
+                We're here when you need us, providing ongoing support and
+                maintenance
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section cta-section">
+        <div class="container">
+          <div class="cta-content fade-in text-center">
+            <h2>Ready to Work With Us?</h2>
+            <p>
+              Let's discuss your project and see how we can help bring your
+              vision to life.
+            </p>
+            <div class="cta-buttons">
+              <a href="contact.html" class="btn btn-primary"
+                >Start Your Project</a
+              >
+              <a href="portfolio.html" class="btn btn-secondary"
+                >View Our Work</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="logo">SwD<span>.</span></div>
+            <p>
+              Engineering digital
+              <span class="highlight">dominance</span> through custom-built,
+              performance-optimized web experiences.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/profile.php?id=61579762735431"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📘</a
+              >
+              <a
+                href="https://www.instagram.com/sharpyswebdesigns/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📷</a
+              >
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#web-design">Web Design</a></li>
+              <li><a href="services.html#ui-ux">UI/UX Design</a></li>
+              <li><a href="services.html#seo">SEO Optimization</a></li>
+              <li><a href="services.html#backend">Backend Integration</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p>
+                📧 <span data-email="contact">Sharpyswebdesigns@gmail.com</span>
+              </p>
+              <p class="booking-consultation" onclick="openCalendly()">
+                📅
+                <span
+                  style="
+                    cursor: pointer;
+                    color: var(--accent-cyan);
+                    text-decoration: underline;
+                  "
+                  >Book Consultation</span
+                >
+              </p>
+              <p>📞 0459 437 764</p>
+              <p>📍 Sydney, NSW, Australia</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="abn">ABN 84 684 902 339</p>
+          <p>
+            &copy; 2025 SwD - Sharpy's Web Designs.
+            <span class="highlight">Engineered</span> for dominance.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

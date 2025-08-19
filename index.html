@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SwD - Sharpy's Web Designs - Futuristic web design agency engineering custom-built digital experiences. Performance-optimized websites, UI/UX design, and SEO domination for startups and creative entrepreneurs."
+    />
+    <meta
+      name="keywords"
+      content="custom web design, futuristic websites, performance optimization, UI/UX engineering, SEO domination, SwD, Sharpy's Web Designs, boutique web agency"
+    />
+    <meta name="author" content="SwD - Sharpy's Web Designs" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="SwD - Sharpy's Web Designs | Futuristic Web Design Agency"
+    />
+    <meta
+      property="og:description"
+      content="Engineering digital dominance through custom-built, performance-optimized web experiences. Futuristic design meets conversion optimization."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://swd.design" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="SwD - Sharpy's Web Designs | Futuristic Web Design Agency"
+    />
+    <meta
+      name="twitter:description"
+      content="Engineering digital dominance through custom-built, performance-optimized web experiences."
+    />
+
+    <title>
+      SwD - Sharpy's Web Designs | Futuristic Web Design & Digital Dominance
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#0D0D0D" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//calendly.com" />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+      />
+    </noscript>
+
+    <!-- Critical CSS (inline) -->
+    <style>
+      :root {
+        --bg-ultra-dark: #0d0d0d;
+        --text-primary: #f5f5f5;
+        --text-secondary: #a0aec0;
+        --accent-cyan: #3bf0e4;
+        --bg-glass: rgba(255, 255, 255, 0.05);
+      }
+      html,
+      body {
+        background: #0d0d0d;
+        color: #a0aec0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 13, 0.95);
+        backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(59, 240, 228, 0.3);
+        z-index: 1002;
+      }
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+      }
+      .logo {
+        font-weight: 700;
+        color: #f5f5f5;
+      }
+      .logo span {
+        color: var(--accent-cyan);
+      }
+      .nav-menu {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .nav-menu {
+          display: flex;
+          gap: 2rem;
+          list-style: none;
+        }
+        .nav-menu a {
+          color: #f5f5f5;
+          text-decoration: none;
+          /* Reserve final size to avoid layout shift when external CSS loads */
+          padding: 0.75rem 1.25rem;
+          border: 1px solid transparent;
+        }
+      }
+      .hero {
+        padding-top: 88px;
+        /* Prevent CLS by matching final computed layout */
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+      .hero h1 {
+        color: #f5f5f5;
+        font-weight: 800;
+        line-height: 1.15; /* allow safe descenders on initial paint */
+        margin-bottom: 1rem;
+        /* Explicit size to avoid heading mapping deprecation and speed up FCP */
+        font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      }
+      .hero p {
+        color: #a0aec0;
+        margin-bottom: 1.5rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.25rem;
+        border-radius: 10px;
+        text-decoration: none;
+        /* Reserve border space to avoid button shift when styles.css loads */
+        border: 2px solid transparent;
+      }
+      .btn-primary {
+        background: var(--accent-cyan);
+        color: #000;
+        font-weight: 800;
+      }
+      .btn-outline {
+        border: 2px solid var(--accent-cyan);
+        color: #f5f5f5;
+      }
+    </style>
+
+    <!-- Stylesheets -->
+    <link rel="preload" as="style" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SwD - Sharpy's Web Designs",
+        "description": "Futuristic web design agency engineering custom-built digital experiences with performance optimization and conversion focus",
+        "url": "https://swd.design",
+        "logo": "https://swd.design/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "0459-437-764",
+          "contactType": "customer service"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <a href="/index.html" class="logo">SwD<span>.</span></a>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content fade-in">
+            <h1>Digital <span class="highlight">Dominance</span> Engineered</h1>
+            <p class="hero-subtitle">
+              We craft <span class="highlight">custom-built</span> digital
+              experiences that convert visitors into customers. Fast, precise,
+              and engineered for <span class="highlight">performance</span> —
+              your digital transformation starts here.
+            </p>
+            <div class="hero-buttons">
+              <a href="contact.html" class="btn btn-primary">Launch Project</a>
+              <a href="portfolio.html" class="btn btn-outline">Explore Work</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Overview -->
+      <section id="services-overview" class="section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Tech-Forward <span class="highlight">Solutions</span></h2>
+            <p>
+              Engineered for speed, built for
+              <span class="highlight">conversion</span>, designed for dominance
+            </p>
+          </div>
+          <div class="grid grid-3">
+            <div class="card fade-in">
+              <div class="service-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Custom <span class="highlight">Web Design</span></h3>
+              <p>
+                Bespoke digital experiences engineered for your brand.
+                <span class="code-text">100% custom</span> — no templates, no
+                compromises.
+              </p>
+              <a href="services.html#web-design" class="service-link glow-link"
+                >Explore Design</a
+              >
+            </div>
+            <div class="card fade-in">
+              <div class="service-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3><span class="highlight">UI/UX</span> Engineering</h3>
+              <p>
+                Conversion-optimized interfaces that turn clicks into customers.
+                <span class="code-text">Data-driven</span> design decisions.
+              </p>
+              <a href="services.html#ui-ux" class="service-link glow-link"
+                >View Process</a
+              >
+            </div>
+            <div class="card fade-in">
+              <div class="service-icon">
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                  <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                  <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                </svg>
+              </div>
+              <h3><span class="highlight">SEO</span> Domination</h3>
+              <p>
+                Algorithmic optimization that puts you
+                <span class="code-text">#1</span>. Technical SEO engineered for
+                search supremacy.
+              </p>
+              <a href="services.html#seo" class="service-link glow-link"
+                >Rank Higher</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us - Redesigned -->
+      <section id="why-choose-us" class="section why-choose-redesign">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Why Choose <span class="highlight">SwD</span>?</h2>
+            <p>
+              We engineer digital experiences that
+              <span class="highlight">dominate</span>
+              — fast, custom, conversion-optimized
+            </p>
+          </div>
+
+          <!-- Central Stats Hub -->
+          <div class="stats-hub fade-in">
+            <div class="central-stat">
+              <div class="stat-number-large">5+</div>
+              <div class="stat-label-large">
+                Digital Experiences <span class="highlight">Engineered</span>
+              </div>
+            </div>
+            <div class="surrounding-stats">
+              <div class="mini-stat">
+                <div class="mini-stat-number">SI < 3s</div>
+                <div class="mini-stat-label">Speed Index</div>
+              </div>
+              <div class="mini-stat">
+                <div class="mini-stat-number">99%</div>
+                <div class="mini-stat-label">Uptime</div>
+              </div>
+              <div class="mini-stat">
+                <div class="mini-stat-number">24/7</div>
+                <div class="mini-stat-label">Support</div>
+              </div>
+              <div class="mini-stat">
+                <div class="mini-stat-number">100%</div>
+                <div class="mini-stat-label">Custom</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Cards Grid -->
+          <div class="features-grid fade-in">
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h4><span class="highlight">100%</span> Custom Built</h4>
+              <p>
+                Zero templates. Pure <span class="code-text">custom code.</span>
+                Engineered for your brand's digital dominance.
+              </p>
+              <div class="feature-badge">No Templates</div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </div>
+              <h4><span class="highlight">Performance</span> Engineered</h4>
+              <p>
+                Optimized for sub‑3s Speed Index on mobile. Built mobile‑first
+                for speed and conversion.
+              </p>
+              <div class="feature-badge">Lightning Fast</div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  ></path>
+                  <polyline points="7.5,4.21 12,6.81 16.5,4.21"></polyline>
+                  <polyline points="7.5,19.79 7.5,14.6 3,12"></polyline>
+                  <polyline points="21,12 16.5,14.6 16.5,19.79"></polyline>
+                </svg>
+              </div>
+              <h4><span class="highlight">SEO</span> Dominance</h4>
+              <p>
+                Algorithmic optimization built-in.
+                <span class="code-text">Rank #1</span> from day one.
+              </p>
+              <div class="feature-badge">Search Supreme</div>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-card-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h4><span class="highlight">Conversion</span> Optimized</h4>
+              <p>
+                Every element engineered to convert.
+                <span class="code-text">Data-driven</span> design decisions.
+              </p>
+              <div class="feature-badge">ROI Focused</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process/Methodology Section - Professional Redesign -->
+      <section id="process" class="section process-professional">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>
+              From <span class="highlight">Conversation</span> to
+              <span class="launch-badge">Launch</span>
+            </h2>
+            <p>
+              Our streamlined process ensures you get exactly what you need,
+              when you need it.
+            </p>
+          </div>
+
+          <!-- Process Cards - 3 Step Process (match portfolio layout) -->
+          <div class="process-steps-grid">
+            <div class="process-step-card card fade-in">
+              <div class="step-number">1</div>
+              <h3>Kickoff &amp; Brief</h3>
+              <p class="step-duration">Form / Call / 30-min Zoom</p>
+              <p>
+                We confirm goals, audience, colours, pages, and features. We
+                collect ABN/ACN, contacts, domain, and brand assets, and ask
+                smart follow-ups so nothing gets missed.
+              </p>
+            </div>
+            <div class="process-step-card card fade-in">
+              <div class="step-number">2</div>
+              <h3>Design &amp; Build</h3>
+              <p class="step-duration">Design & build — no wireframes</p>
+              <p>
+                We get to work immediately and share a private preview once the
+                core is in place. We’ll share a private preview once the core
+                you tell us what you love and what to change, and we refine
+                together until it’s pixel-perfect and exactly what you want.
+              </p>
+            </div>
+            <div class="process-step-card card fade-in">
+              <div class="step-number">3</div>
+              <h3>Launch &amp; Ongoing Care</h3>
+              <p class="step-duration">Live, secure, supported</p>
+              <p>
+                We publish your site, connect domain &amp; SSL, optimise speed
+                and on-page SEO, wire forms/bookings, and set redirects &amp;
+                analytics. You own your domain and content, no lock-in. Need
+                changes? Send them anytime, typical turnaround 1–2 business
+                days.
+              </p>
+            </div>
+          </div>
+
+          <!-- Our Commitment Section -->
+          <div class="commitment-section fade-in">
+            <div class="commitment-card">
+              <h3>💎 Premium Results, Rapid Delivery</h3>
+              <p class="commitment-text">
+                We move fast and deliver flawless-premium designs which are
+                engineered for performance, zero compromises.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack Section -->
+      <section id="tech-stack" class="section bg-gradient">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>
+              Modern <span class="highlight">Static-First</span> Technology
+              Stack
+            </h2>
+            <p>
+              Lightning-fast static sites with modern frontend tools and
+              <span class="highlight">serverless backend services</span>
+            </p>
+          </div>
+
+          <div class="tech-categories fade-in">
+            <!-- Frontend Technologies -->
+            <div class="tech-category">
+              <h3><span class="highlight">Frontend</span> Mastery</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <div class="tech-icon">🌐</div>
+                  <div class="tech-name">HTML5</div>
+                  <div class="tech-desc">Semantic & Accessible</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🎨</div>
+                  <div class="tech-name">CSS3</div>
+                  <div class="tech-desc">Modern Animations</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">⚡</div>
+                  <div class="tech-name">JavaScript</div>
+                  <div class="tech-desc">ES6+ & Performance</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">📱</div>
+                  <div class="tech-name">Responsive</div>
+                  <div class="tech-desc">Mobile-First Design</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Serverless Backend -->
+            <div class="tech-category">
+              <h3><span class="highlight">Serverless</span> Backend</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <div class="tech-icon">🚀</div>
+                  <div class="tech-name">Netlify</div>
+                  <div class="tech-desc">Functions & Forms</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">📧</div>
+                  <div class="tech-name">EmailJS</div>
+                  <div class="tech-desc">Contact Forms</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🔗</div>
+                  <div class="tech-name">APIs</div>
+                  <div class="tech-desc">Third-party Integration</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🔒</div>
+                  <div class="tech-name">JAMstack</div>
+                  <div class="tech-desc">Secure & Scalable</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deployment & Performance -->
+            <div class="tech-category">
+              <h3><span class="highlight">Deployment</span> & Performance</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <div class="tech-icon">🌍</div>
+                  <div class="tech-name">Global CDN</div>
+                  <div class="tech-desc">Lightning Fast</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🔄</div>
+                  <div class="tech-name">Git Deploy</div>
+                  <div class="tech-desc">Instant Updates</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🔒</div>
+                  <div class="tech-name">SSL/HTTPS</div>
+                  <div class="tech-desc">Secure by Default</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">📊</div>
+                  <div class="tech-name">Analytics</div>
+                  <div class="tech-desc">Performance Insights</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance Metrics -->
+          <div class="performance-metrics fade-in">
+            <div class="metric-item">
+              <div class="metric-icon">⚡</div>
+              <div class="metric-value">SI < 3s</div>
+              <div class="metric-label">Speed Index</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-icon">🌍</div>
+              <div class="metric-value">Global</div>
+              <div class="metric-label">CDN Delivery</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-icon">🔒</div>
+              <div class="metric-value">100%</div>
+              <div class="metric-label">Secure HTTPS</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-icon">💰</div>
+              <div class="metric-value">$0</div>
+              <div class="metric-label">Server Costs</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries & Clients Section -->
+      <section id="industries" class="section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Industries We <span class="highlight">Elevate</span></h2>
+            <p>
+              From first site to full-scale platform, we build fast, SEO-driven
+              websites that turn visitors into customers across
+              <span class="highlight">every sector</span>.
+            </p>
+          </div>
+
+          <div class="industries-grid fade-in">
+            <div class="industry-card">
+              <div class="industry-icon">🚀</div>
+              <h4>
+                <span class="highlight">Small Business</span>, Trades & Local
+                Services
+              </h4>
+              <p>
+                High-converting websites for all trades and local services:
+                plumbers, sparkies, builders, mechanics, plus barbers, hair &
+                beauty salons, cafés, gyms and more. Any business, any
+                niche—we’ll build it to drive calls, bookings and enquiries.
+              </p>
+              <div class="industry-stats">
+                <span class="stat">ONLINE BOOKINGS</span>
+                <span class="stat">QUOTE & INVOICE FORMS</span>
+              </div>
+            </div>
+
+            <div class="industry-card">
+              <div class="industry-icon">🛒</div>
+              <h4><span class="highlight">E-commerce</span> & Online Stores</h4>
+              <p>
+                Conversion-led Shopify/WooCommerce stores that sell from day
+                one: fast product pages, streamlined checkout, reviews, email
+                flows, and growth-ready SEO.
+              </p>
+              <div class="industry-stats">
+                <span class="stat">MOBILE-OPTIMISED</span>
+                <span class="stat">UPSELLS & BUNDLES</span>
+              </div>
+            </div>
+
+            <div class="industry-card">
+              <div class="industry-icon">🏥</div>
+              <h4><span class="highlight">Health</span>, Wellness & Clinics</h4>
+              <p>
+                Privacy-first sites for clinics, gyms, and wellness brands:
+                online bookings, intake forms, reminders, and clear patient
+                pathways.
+              </p>
+              <div class="industry-stats">
+                <span class="stat">ONLINE BOOKINGS</span>
+                <span class="stat">SECURE BY DEFAULT</span>
+              </div>
+            </div>
+
+            <div class="industry-card">
+              <div class="industry-icon">💰</div>
+              <h4>
+                <span class="highlight">Finance</span>, Legal & Professional
+                Services
+              </h4>
+              <p>
+                Authority-building websites that turn trust into enquiries:
+                service pages, case studies, reviews, and lead capture with
+                Calendly/Zoom.
+              </p>
+              <div class="industry-stats">
+                <span class="stat">COMPLIANCE-READY</span>
+                <span class="stat">SCHEMA-BASED SEO</span>
+              </div>
+            </div>
+
+            <div class="industry-card">
+              <div class="industry-icon">🎓</div>
+              <h4>
+                <span class="highlight">Education</span>, Training & Coaches
+              </h4>
+              <p>
+                Course pages, resource hubs, webinars, and memberships: simple
+                CMS updates plus Stripe/Calendly integrations and SEO baked in.
+              </p>
+              <div class="industry-stats">
+                <span class="stat">LMS-READY</span>
+                <span class="stat">EASY UPDATES</span>
+              </div>
+            </div>
+
+            <div class="industry-card">
+              <div class="industry-icon">🏢</div>
+              <h4><span class="highlight">Scale</span> & Multi-Location</h4>
+              <p>
+                Built to scale: multi-location pages, directory/local SEO,
+                performance budgets, and analytics so every location wins.
+              </p>
+              <div class="industry-stats">
+                <span class="stat">GLOBAL CDN</span>
+                <span class="stat">MULTI-LOCATION SEO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2><span class="highlight">Real</span> Testimonials</h2>
+            <p>Authentic feedback from businesses we've partnered with.</p>
+          </div>
+          <div class="grid grid-3">
+            <div class="testimonial-card card fade-in">
+              <div class="testimonial-content">
+                <div class="stars">★★★★★</div>
+                <p>
+                  "SwD rebuilt our site and made our phone number impossible to
+                  miss. In the first month we saw roughly
+                  <span class="highlight">+45%</span> more calls and the site
+                  runs great on phones (now at
+                  <span class="code-text">85%</span> on mobile tests). They
+                  explained every step and were easy to work with."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <strong>Amina Qadir</strong>
+                <span>Owner, Qira Industries</span>
+              </div>
+            </div>
+            <div class="testimonial-card card fade-in">
+              <div class="testimonial-content">
+                <div class="stars">★★★★★</div>
+                <p>
+                  "We're a family restaurant and we rely on phone orders. SwD
+                  refreshed our website, made the menu easy to read, and put our
+                  phone number front and center. Since launch, calls are up
+                  about
+                  <span class="highlight">+27%</span> and we’re seeing
+                  <span class="code-text">95%</span> five-star reviews."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <strong>Zo Chen</strong>
+                <span>Owner, Mr Zo Chinese</span>
+              </div>
+            </div>
+            <div class="testimonial-card card fade-in">
+              <div class="testimonial-content">
+                <div class="stars">★★★★★</div>
+                <p>
+                  "We needed a clean site that helps people call quickly. SwD
+                  organised our services, added prominent click-to-call buttons,
+                  and made updates easy for us. Service calls have increased
+                  <span class="highlight">+35%</span> and clients are happy —
+                  <span class="code-text">100%</span> satisfaction last month."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <strong>Ethan Cole</strong>
+                <span>Owner, All Time Plumbing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="section bg-gradient">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+            <p>
+              Everything you need to know about our
+              <span class="highlight">engineering process</span>
+            </p>
+          </div>
+
+          <div class="faq-container fade-in">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>How long does a typical project take?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Project timelines vary based on complexity, but most custom
+                  websites take <span class="highlight">4-14 days</span> from
+                  discovery to launch. We provide detailed timelines during our
+                  initial consultation and keep you updated throughout the
+                  process. For large or highly custom builds, timelines may
+                  extend beyond this range, we'll confirm during discovery.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>Do you use templates or build everything custom?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We build <span class="highlight">100% custom</span> solutions
+                  from scratch. No templates, no themes, no shortcuts. Every
+                  line of code is engineered specifically for your brand and
+                  business goals.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>What's included in your ongoing support?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Our support includes
+                  <span class="highlight">24/7 monitoring</span>, security
+                  updates, performance optimization, content updates, and
+                  technical support. We handle everything end‑to‑end — no
+                  handoff.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>How do you ensure fast loading times?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We use advanced optimization techniques including
+                  <span class="highlight">code splitting</span>, image
+                  optimization, CDN deployment, and performance monitoring. Our
+                  mobile experiences are optimized to achieve a
+                  <span class="code-text">sub‑3s</span> Speed Index.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>Can you help with SEO and digital marketing?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Absolutely! We offer
+                  <span class="highlight">technical full‑backend SEO</span> as
+                  an optional add‑on, and can extend with advanced SEO services,
+                  content strategy, and conversion optimization as needed.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>What if I need changes after the site is live?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We include
+                  <span class="highlight">3 months of post‑launch support</span>
+                  with every project. After that, minor updates are available
+                  through our maintenance plans starting at
+                  <span class="highlight">$50/month</span>, and major changes
+                  are handled through our streamlined change request process.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>Do you work with businesses outside your local area?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes! We work with clients
+                  <span class="highlight">globally</span>. Our remote-first
+                  approach means we can deliver exceptional results regardless
+                  of location. We use modern collaboration tools to stay
+                  connected throughout the project.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h4>How do you determine pricing for custom projects?</h4>
+                <div class="faq-toggle">+</div>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We believe every project is unique, so we don't use rigid
+                  packages. Instead, we offer
+                  <span class="highlight">transparent, custom pricing</span>
+                  based on your specific requirements. After our consultation
+                  call, we provide a detailed proposal with fixed costs,
+                  timeline, and payment milestones, no hidden fees, no
+                  surprises.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Book Consultation Section -->
+      <section class="section booking-section">
+        <div class="container">
+          <div class="booking-card fade-in">
+            <div class="booking-content">
+              <div class="booking-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="booking-text">
+                <h3>Book Consultation</h3>
+                <p>Schedule a free 30-minute zoom call</p>
+                <span class="booking-availability"
+                  >Available Mon-Fri, 9AM-6PM AEST</span
+                >
+              </div>
+            </div>
+            <div class="booking-action">
+              <button class="booking-btn" onclick="openCalendly()">
+                <span>Book Now</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section id="cta" class="section cta-section">
+        <div class="container">
+          <div class="cta-content fade-in text-center">
+            <h2>Ready for Digital <span class="highlight">Dominance</span>?</h2>
+            <p>
+              Let's engineer your competitive advantage.
+              <span class="code-text">Custom-built</span> solutions that
+              convert.
+            </p>
+            <div class="cta-buttons">
+              <a href="contact.html" class="btn btn-primary">Launch Project</a>
+              <a href="portfolio.html" class="btn btn-secondary"
+                >View Arsenal</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="logo">SwD<span>.</span></div>
+            <p>
+              Engineering digital
+              <span class="highlight">dominance</span> through custom-built,
+              performance-optimized web experiences.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/profile.php?id=61579762735431"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📘</a
+              >
+              <a
+                href="https://www.instagram.com/sharpyswebdesigns/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                >📷</a
+              >
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#web-design">Web Design</a></li>
+              <li><a href="services.html#ui-ux">UI/UX Design</a></li>
+              <li><a href="services.html#seo">SEO Optimization</a></li>
+              <li><a href="services.html#backend">Backend Integration</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p>
+                📧 <span data-email="contact">Sharpyswebdesigns@gmail.com</span>
+              </p>
+              <p class="booking-consultation" onclick="openCalendly()">
+                📅
+                <span
+                  style="
+                    cursor: pointer;
+                    color: var(--accent-cyan);
+                    text-decoration: underline;
+                  "
+                  >Book Consultation</span
+                >
+              </p>
+              <p>📞 0459 437 764</p>
+              <p>📍 Sydney, NSW, Australia</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="abn">ABN 84 684 902 339</p>
+          <p>
+            &copy; 2025 SwD - Sharpy's Web Designs.
+            <span class="highlight">Engineered</span> for dominance.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

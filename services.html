@@ -140,8 +140,15 @@
       }
     </style>
 
-    <!-- Load CSS non-blocking -->
+    <!-- Preload critical resources -->
     <link rel="preload" as="style" href="styles.css" />
+    <link rel="preload" as="script" href="script.js" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//calendly.com" />
+    <link rel="dns-prefetch" href="//assets.calendly.com" />
+    <link rel="dns-prefetch" href="//js.emailjs.com" />
+
+    <!-- Load CSS non-blocking -->
     <link
       rel="stylesheet"
       href="styles.css"

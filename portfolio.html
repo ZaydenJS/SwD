@@ -150,6 +150,25 @@
       onload="this.media='all'"
     />
     <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="script" href="script.js" />
+    <link
+      rel="preload"
+      as="image"
+      href="Recent%20Project%20Photos/qira.png"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="Recent%20Project%20Photos/MRZO.png"
+      fetchpriority="high"
+    />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//calendly.com" />
+    <link rel="dns-prefetch" href="//assets.calendly.com" />
+    <link rel="dns-prefetch" href="//js.emailjs.com" />
   </head>
   <body>
     <!-- Header -->
@@ -222,7 +241,8 @@
                     alt="Qira Industries preview"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
                     decoding="async"
                   />
                 </a>
@@ -307,7 +327,8 @@
                     alt="Mr Zo Chinese preview"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
                     decoding="async"
                   />
                 </a>

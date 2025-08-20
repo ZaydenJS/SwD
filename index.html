@@ -49,10 +49,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="theme-color" content="#0D0D0D" />
 
+    <!-- Performance: Early resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link rel="dns-prefetch" href="//calendly.com" />
+    <link rel="dns-prefetch" href="//assets.calendly.com" />
+    <link rel="dns-prefetch" href="//js.emailjs.com" />
 
     <link
       rel="preload"
@@ -183,6 +189,9 @@
       onload="this.media='all'"
     />
     <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="script" href="script.js" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">

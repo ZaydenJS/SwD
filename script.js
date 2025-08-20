@@ -710,18 +710,43 @@ function initScrollToTop() {
   toggleScrollButton();
 }
 
-// Performance optimization
+// Performance optimization - Enhanced scroll handling
 const debouncedScroll = debounce(() => {
   // Handle scroll events here if needed
-}, 10);
+}, 16); // 60fps = 16ms
 
+// Use passive listeners for better performance
 window.addEventListener("scroll", debouncedScroll, { passive: true });
+
+// Performance: Optimize animations with requestAnimationFrame
+function optimizedAnimate(callback) {
+  let ticking = false;
+  return function () {
+    if (!ticking) {
+      requestAnimationFrame(callback);
+      ticking = true;
+      setTimeout(() => {
+        ticking = false;
+      }, 16);
+    }
+  };
+}
 
 // Preload critical images
 function preloadImages() {
   const imageUrls = [
     // Add critical image URLs here
   ];
+
+  // Portfolio page specific preloading
+  if (window.location.pathname.includes("portfolio")) {
+    const portfolioImages = [
+      "Recent%20Project%20Photos/alltimeplumbing.png",
+      "Recent%20Project%20Photos/petalhairdesigns.png",
+      "Recent%20Project%20Photos/7elementshair.png",
+    ];
+    imageUrls.push(...portfolioImages);
+  }
 
   imageUrls.forEach((url) => {
     const img = new Image();
@@ -732,20 +757,31 @@ function preloadImages() {
 // Initialize preloading
 preloadImages();
 
-// Lazy loading for images
+// Lazy loading for images - Performance optimized
 function initLazyLoading() {
   const images = document.querySelectorAll("img[data-src]");
 
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove("lazy");
-        imageObserver.unobserve(img);
-      }
-    });
-  });
+  // Special handling for portfolio images - load them faster
+  const isPortfolioPage = window.location.pathname.includes("portfolio");
+  const rootMargin = isPortfolioPage ? "200px 0px" : "50px 0px";
+
+  const imageObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazy");
+          imageObserver.unobserve(img);
+        }
+      });
+    },
+    {
+      // Performance: optimize intersection observer
+      rootMargin: rootMargin,
+      threshold: 0.1,
+    }
+  );
 
   images.forEach((img) => imageObserver.observe(img));
 }

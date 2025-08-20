@@ -137,8 +137,23 @@
       }
     </style>
 
+    <!-- Preload critical resources -->
     <link rel="preload" as="style" href="styles.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="script" href="script.js" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//calendly.com" />
+    <link rel="dns-prefetch" href="//assets.calendly.com" />
+    <link rel="dns-prefetch" href="//js.emailjs.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    <!-- Stylesheets: load non-blocking -->
+    <link
+      rel="stylesheet"
+      href="styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
 
     <!-- EmailJS SDK -->
     <script

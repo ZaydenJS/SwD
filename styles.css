@@ -248,6 +248,23 @@ a.glow-link:active::before {
 /* Helps Speed Index by preventing layout shift of images before load */
 img {
   content-visibility: auto;
+  /* Performance: optimize image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Performance: optimize will-change for animations */
+.fade-in,
+.hero-content,
+.page-hero-content,
+.btn:hover,
+.card:hover {
+  will-change: transform, opacity;
+}
+
+/* Performance: contain layout for sections */
+.section {
+  contain: layout style;
 }
 
 .container {
@@ -608,6 +625,23 @@ img {
 .section .section-title.fade-in {
   opacity: 1 !important;
   transform: none !important;
+}
+
+/* Performance: optimize rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Performance: optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Reduce initial work for below-the-fold sections on modern browsers */
@@ -5073,6 +5107,11 @@ main > section:not(:first-child) {
   height: 100%;
   object-fit: contain; /* show entire image inside fixed card height */
   display: block;
+  /* Performance: optimize image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0); /* Force GPU acceleration */
+  will-change: transform;
 }
 
 .project-mockup {

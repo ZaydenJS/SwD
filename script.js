@@ -741,6 +741,9 @@ function preloadImages() {
   // Portfolio page specific preloading
   if (window.location.pathname.includes("portfolio")) {
     const portfolioImages = [
+      "Recent%20Project%20Photos/cockyspainting.png",
+      "Recent%20Project%20Photos/qira.png",
+      "Recent%20Project%20Photos/MRZO.png",
       "Recent%20Project%20Photos/alltimeplumbing.png",
       "Recent%20Project%20Photos/petalhairdesigns.png",
       "Recent%20Project%20Photos/7elementshair.png",

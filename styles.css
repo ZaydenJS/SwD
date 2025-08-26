@@ -5540,18 +5540,6 @@ main > section:not(:first-child) {
   quotes: "" " " "" "'" "'";
 }
 
-.testimonial-slide blockquote::before {
-  content: open-quote;
-  font-size: 2rem;
-  color: var(--accent-blue);
-}
-
-.testimonial-slide blockquote::after {
-  content: close-quote;
-  font-size: 2rem;
-  color: var(--accent-blue);
-}
-
 .testimonial-author strong {
   color: var(--primary-dark);
   display: block;

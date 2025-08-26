@@ -2682,6 +2682,20 @@ main > section:not(:first-child) {
 /* Testimonials */
 .testimonial-card {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.testimonial-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-author {
+  margin-top: auto;
 }
 
 .stars {
@@ -2930,7 +2944,7 @@ main > section:not(:first-child) {
 .service-benefits h3 {
   color: var(--text-primary);
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.3rem !important;
   font-weight: 600;
 }
 
@@ -2944,7 +2958,7 @@ main > section:not(:first-child) {
   padding: 0.5rem 0;
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: 1.05rem !important;
 }
 
 /* Desktop: extra spacing under Web Design & UI/UX What's Included lists */
@@ -6848,6 +6862,13 @@ main > section:not(:first-child) {
   }
   .service-features li {
     text-align: center;
+    font-size: 1.05rem !important;
+  }
+
+  /* Ensure all What's Included headings are exactly the same size on mobile */
+  .service-features h3 {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
   }
 
   /* Consultation section centering */
@@ -7009,6 +7030,7 @@ main > section:not(:first-child) {
   #seo .service-features li {
     text-align: center;
     margin-bottom: 0.5rem;
+    font-size: 1.05rem !important;
   }
 
   #seo .seo-metrics.expected-results {

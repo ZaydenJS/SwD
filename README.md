@@ -1,16 +1,18 @@
-# Sharp's Web Design (SwD) - Premium Web Design Agency Website
+# SwD - Sharpy's Web Designs - Premium Web Design Agency Website
 
-A complete, high-end responsive website for Sharp's Web Design, a modern digital agency specializing in custom websites, UI/UX design, backend integrations, and SEO optimization.
+A complete, high-end responsive website for SwD - Sharpy's Web Designs, a modern digital agency specializing in custom websites, UI/UX design, backend integrations, and SEO optimization.
 
 ## 🌟 Features
 
 ### Design & User Experience
+
 - **Modern, Professional Design**: Clean aesthetics with midnight blue, slate gray, and electric blue color scheme
 - **Fully Responsive**: Mobile-first design that works flawlessly on all devices
 - **Smooth Animations**: CSS transitions and JavaScript-powered scroll animations
 - **Interactive Elements**: Hover effects, form validation, and dynamic content
 
 ### Pages Included
+
 1. **Home Page** (`index.html`) - Hero section, services overview, testimonials, and call-to-action
 2. **Services Page** (`services.html`) - Detailed service offerings with interactive mockups and pricing
 3. **About Page** (`about.html`) - Company story, team profiles, mission & values, and process timeline
@@ -18,6 +20,7 @@ A complete, high-end responsive website for Sharp's Web Design, a modern digital
 5. **Contact Page** (`contact.html`) - Contact form, information, FAQ section
 
 ### Technical Features
+
 - **SEO Optimized**: Meta tags, structured data, sitemap.xml, and robots.txt
 - **Performance Optimized**: Lazy loading, optimized CSS/JS, and fast loading times
 - **PWA Ready**: Manifest file and service worker support
@@ -27,16 +30,19 @@ A complete, high-end responsive website for Sharp's Web Design, a modern digital
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary Dark**: #0D1B2A (Midnight Blue)
-- **Secondary Gray**: #4A5568 (Slate Gray)  
+- **Secondary Gray**: #4A5568 (Slate Gray)
 - **Soft White**: #F7FAFC
 - **Accent Blue**: #3B82F6 (Electric Blue)
 
 ### Typography
+
 - **Headings**: Poppins (Clean, bold modern sans-serif)
 - **Body Text**: Inter (Readable, minimal sans-serif)
 
 ### Visual Elements
+
 - Rounded corners and subtle drop shadows
 - Smooth transitions and hover effects
 - High-quality abstract backgrounds and tech-inspired illustrations
@@ -61,16 +67,19 @@ SwD/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 - Web server (for local development: Live Server, XAMPP, or similar)
 
 ### Installation
+
 1. Clone or download the project files
 2. Open the project folder in your preferred code editor
 3. Start a local web server in the project directory
 4. Open `index.html` in your browser
 
 ### For Local Development
+
 ```bash
 # Using Python (if installed)
 python -m http.server 8000
@@ -93,23 +102,27 @@ Then visit `http://localhost:8000` in your browser.
 ## 🔧 Customization
 
 ### Colors
+
 Update CSS variables in `styles.css`:
+
 ```css
 :root {
-    --primary-dark: #0D1B2A;
-    --secondary-gray: #4A5568;
-    --soft-white: #F7FAFC;
-    --accent-blue: #3B82F6;
+  --primary-dark: #0d1b2a;
+  --secondary-gray: #4a5568;
+  --soft-white: #f7fafc;
+  --accent-blue: #3b82f6;
 }
 ```
 
 ### Content
+
 - Update company information in all HTML files
 - Replace placeholder contact details
 - Modify service offerings and pricing
 - Update team member information
 
 ### Images
+
 - Add your own images to replace mockups
 - Update favicon and PWA icons
 - Optimize images for web (WebP format recommended)
@@ -141,6 +154,7 @@ Update CSS variables in `styles.css`:
 ## 📞 Contact Form
 
 The contact form includes:
+
 - Client-side validation
 - Professional form styling
 - Success/error notifications
@@ -158,6 +172,7 @@ The contact form includes:
 ## 📈 Analytics Ready
 
 The website is prepared for:
+
 - Google Analytics integration
 - Google Tag Manager
 - Facebook Pixel
@@ -166,12 +181,14 @@ The website is prepared for:
 ## 🚀 Deployment
 
 ### Static Hosting (Recommended)
+
 - Netlify
 - Vercel
 - GitHub Pages
 - AWS S3 + CloudFront
 
 ### Traditional Hosting
+
 - Upload all files to your web server
 - Ensure proper MIME types are configured
 - Enable Gzip compression
@@ -179,14 +196,15 @@ The website is prepared for:
 
 ## 📝 License
 
-This project is created for Sharp's Web Design. All rights reserved.
+This project is created for SwD - Sharpy's Web Designs. All rights reserved.
 
 ## 🤝 Support
 
 For questions or support regarding this website:
-- Email: hello@sharpswebdesign.com
-- Phone: +1 (555) 123-4567
+
+- Email: sharpyswebdesigns@gmail.com
+- Phone: 0459 437 764
 
 ---
 
-**Built with ❤️ by Sharp's Web Design Team**
+**Built with ❤️ by SwD - Sharpy's Web Designs Team**

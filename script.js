@@ -1,4 +1,4 @@
-// Sharp's Web Design - Main JavaScript File
+// SwD - Sharpy's Web Designs - Main JavaScript File
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all functionality
@@ -303,8 +303,8 @@ We've received your message and will get back to you within 24 hours with a pers
 
 NEXT STEPS - Choose what works best for you:
 
-🚀 FILL OUT PROJECT DETAILS FORM (2-3 minutes)
-Get a more accurate quote by completing our project details form:
+🚀 COMPLETE DETAILED PROJECT BRIEF (10-15 minutes)
+For serious projects only - get accurate quote by completing our detailed brief:
 ${googleFormURL}
 
 📅 SCHEDULE FREE ZOOM CALL (30 minutes)
@@ -419,8 +419,8 @@ function showSuccessMessage(data, contactForm) {
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="${googleFormURL}" target="_blank"
              class="btn btn-primary" style="min-width: 220px; position: relative;">
-            📋 Fill Out Project Details Form
-            <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.2rem;">Get accurate quote - 2-3 minutes</div>
+            📋 Complete Detailed Project Brief
+            <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.2rem;">For serious projects only • 10-15 minutes</div>
           </a>
           <a href="https://calendly.com/sharpyswebdesigns/30min" target="_blank"
              class="btn btn-outline" style="min-width: 220px;">
@@ -913,7 +913,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Calendly integration with performance optimizations
 function openCalendly() {
-  // Sharpy's Web Designs Calendly booking link with performance parameters
+  // SwD - Sharpy's Web Designs Calendly booking link with performance parameters
   const calendlyUrl =
     "https://calendly.com/sharpyswebdesigns/30min?hide_landing_page_details=1&hide_gdpr_banner=1";
 
@@ -967,7 +967,7 @@ function initSecureEmail() {
   // Professional email template
   const emailTemplate = {
     subject: encodeURIComponent("Web Design Inquiry from SwD Website"),
-    body: encodeURIComponent(`Hello Sharpy's Web Designs Team,
+    body: encodeURIComponent(`Hello SwD - Sharpy's Web Designs Team,
 
 I'm interested in learning more about your web design services. I found your website and would like to discuss:
 

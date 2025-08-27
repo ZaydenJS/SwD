@@ -25,16 +25,18 @@
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
+      media="print"
+      onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=optional"
       />
     </noscript>
 
@@ -86,6 +88,13 @@
         justify-content: space-between;
         padding: 1rem 2rem;
       }
+      .logo {
+        font-weight: 700;
+        color: #f5f5f5;
+      }
+      .logo span {
+        color: var(--accent-cyan);
+      }
       .nav-menu {
         display: none;
       }
@@ -101,14 +110,6 @@
           padding: 0.75rem 1.25rem;
           border: 1px solid transparent;
         }
-      }
-      .page-hero {
-        padding-top: 88px;
-        min-height: 60vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
       }
       .page-hero {
         padding-top: 88px;
@@ -374,7 +375,7 @@
               <div class="faq-answer">
                 <p>
                   Every build is custom‑engineered for your brand: responsive
-                  design, high‑performance development, CMS setup, and 25 a
+                  design, high‑performance development, CMS setup, and $25 a
                   month of post‑launch support. We handle everything end‑to‑end,
                   including secure hosting recommendations and domain setup. No
                   handoff.
@@ -405,7 +406,7 @@
               <div class="faq-answer">
                 <p>
                   We include
-                  <span class="highlight">25 a month</span>
+                  <span class="highlight">$25 a month</span>
                   with every project for minor changes and updates. After that,
                   choose a maintenance plan or request larger updates via our
                   streamlined change request process.

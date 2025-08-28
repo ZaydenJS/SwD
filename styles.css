@@ -6121,7 +6121,7 @@ main > section:not(:first-child) {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.75rem;
   border: 2px solid #e2e8f0;
   background: #fafbfc;
@@ -6129,6 +6129,34 @@ main > section:not(:first-child) {
   font-size: 0.95rem;
   position: relative;
   overflow: hidden;
+}
+
+.social-link span {
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Portfolio Method Styling */
+.portfolio-method {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio-method:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+.portfolio-method:hover .method-icon {
+  transform: scale(1.1);
+}
+
+.portfolio-method:hover h3 {
+  color: var(--accent-cyan);
 }
 
 .social-link::before {

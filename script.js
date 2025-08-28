@@ -966,24 +966,12 @@ function initSecureEmail() {
 
   // Professional email template
   const emailTemplate = {
-    subject: encodeURIComponent("Web Design Inquiry from SwD Website"),
-    body: encodeURIComponent(`Hello SwD - Sharpy's Web Designs Team,
+    subject: encodeURIComponent("Website Design Inquiry"),
+    body: encodeURIComponent(`Hello SwD – Sharpy's Web Designs Team,
 
-I'm interested in learning more about your web design services. I found your website and would like to discuss:
+I came across your website and I'm interested in getting a new site built for my business. Could we set up a time to discuss my project, timeline, and budget?
 
-□ Custom Web Design
-□ UI/UX Design
-□ SEO Optimization
-□ Backend Integration
-□ Other: _______________
-
-Project Details:
-- Business/Industry:
-- Timeline:
-- Budget Range:
-- Specific Requirements:
-
-I would appreciate the opportunity to discuss my project with you.
+Looking forward to your reply.
 
 Best regards,
 [Your Name]

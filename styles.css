@@ -4949,6 +4949,50 @@ main > section:not(:first-child) {
     order: 3;
   }
 
+  /* Mobile-only skill tag pyramid reordering for Zayden (2nd card) */
+  .team-member:nth-child(2) .member-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member:nth-child(2) .skill-tag:nth-child(1) {
+    /* UI/UX Design */
+    order: 1;
+  }
+
+  .team-member:nth-child(2) .skill-tag:nth-child(2) {
+    /* Brand Strategy */
+    order: 2;
+  }
+
+  .team-member:nth-child(2) .skill-tag:nth-child(3) {
+    /* Conversion Optimization */
+    order: 3;
+  }
+
+  /* Mobile-only skill tag pyramid reordering for Chloe (3rd card) */
+  .team-member:nth-child(3) .member-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member:nth-child(3) .skill-tag:nth-child(1) {
+    /* Technical SEO (13 chars) */
+    order: 1; /* Keep on top - shortest */
+  }
+
+  .team-member:nth-child(3) .skill-tag:nth-child(2) {
+    /* Content Strategy (16 chars) */
+    order: 2; /* Keep in middle */
+  }
+
+  .team-member:nth-child(3) .skill-tag:nth-child(3) {
+    /* Analytics & Reporting (20 chars) */
+    order: 3; /* Keep on bottom - longest */
+  }
+
   .member-info {
     text-align: center;
   }

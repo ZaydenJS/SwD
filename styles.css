@@ -4933,6 +4933,22 @@ main > section:not(:first-child) {
     text-align: center;
   }
 
+  /* Mobile-only team member reordering: Zayden first, then Anthony, then Chloe */
+  .team-member:nth-child(1) {
+    /* Anthony - move to 2nd position */
+    order: 2;
+  }
+
+  .team-member:nth-child(2) {
+    /* Zayden - move to 1st position */
+    order: 1;
+  }
+
+  .team-member:nth-child(3) {
+    /* Chloe - stays in 3rd position */
+    order: 3;
+  }
+
   .member-info {
     text-align: center;
   }

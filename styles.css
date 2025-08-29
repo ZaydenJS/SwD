@@ -6030,6 +6030,33 @@ main > section:not(:first-child) {
   transform: scale(1.05);
 }
 
+/* Clickable phone icon styling */
+.phone-clickable {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.phone-clickable:hover {
+  background: linear-gradient(135deg, var(--accent-blue), #2563eb) !important;
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 0 8px rgba(59, 240, 228, 0.6));
+}
+
+/* Clickable phone number styling */
+.phone-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.phone-link:hover {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
 .method-content h3 {
   margin-bottom: 0.5rem;
   color: var(--primary-dark);

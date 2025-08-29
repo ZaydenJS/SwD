@@ -2425,6 +2425,14 @@ main > section:not(:first-child) {
   text-shadow: none;
 }
 
+/* Desktop pyramid ordering for Finance card only */
+.industry-card:nth-child(4) .industry-stats .stat:nth-child(1) {
+  order: 2; /* COMPLIANCE-READY - longer visually, goes on right */
+}
+.industry-card:nth-child(4) .industry-stats .stat:nth-child(2) {
+  order: 1; /* SCHEMA-BASED SEO - shorter visually, goes on left */
+}
+
 /* Client Types */
 .client-types {
   margin-top: 5rem;
@@ -2488,6 +2496,60 @@ main > section:not(:first-child) {
 
   .industry-card {
     padding: 2rem;
+  }
+
+  /* Mobile pyramid ordering for industry stats tags */
+  .industry-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Small Business: "ONLINE BOOKINGS" (15) -> "QUOTE & INVOICE FORMS" (21) */
+  .industry-card:nth-child(1) .industry-stats .stat:nth-child(1) {
+    order: 1; /* ONLINE BOOKINGS - shorter, goes on top */
+  }
+  .industry-card:nth-child(1) .industry-stats .stat:nth-child(2) {
+    order: 2; /* QUOTE & INVOICE FORMS - longer, goes on bottom */
+  }
+
+  /* E-commerce: "MOBILE-OPTIMISED" (16) -> "UPSELLS & BUNDLES" (17) */
+  .industry-card:nth-child(2) .industry-stats .stat:nth-child(1) {
+    order: 1; /* MOBILE-OPTIMISED - shorter, goes on top */
+  }
+  .industry-card:nth-child(2) .industry-stats .stat:nth-child(2) {
+    order: 2; /* UPSELLS & BUNDLES - longer, goes on bottom */
+  }
+
+  /* Health: "ONLINE BOOKINGS" (15) -> "SECURE BY DEFAULT" (17) */
+  .industry-card:nth-child(3) .industry-stats .stat:nth-child(1) {
+    order: 1; /* ONLINE BOOKINGS - shorter, goes on top */
+  }
+  .industry-card:nth-child(3) .industry-stats .stat:nth-child(2) {
+    order: 2; /* SECURE BY DEFAULT - longer, goes on bottom */
+  }
+
+  /* Finance: "SCHEMA-BASED SEO" (shorter visually) -> "COMPLIANCE-READY" (longer visually) */
+  .industry-card:nth-child(4) .industry-stats .stat:nth-child(1) {
+    order: 2; /* COMPLIANCE-READY - longer visually, goes on bottom */
+  }
+  .industry-card:nth-child(4) .industry-stats .stat:nth-child(2) {
+    order: 1; /* SCHEMA-BASED SEO - shorter visually, goes on top */
+  }
+
+  /* Education: "LMS-READY" (9) -> "EASY UPDATES" (12) */
+  .industry-card:nth-child(5) .industry-stats .stat:nth-child(1) {
+    order: 1; /* LMS-READY - shorter, goes on top */
+  }
+  .industry-card:nth-child(5) .industry-stats .stat:nth-child(2) {
+    order: 2; /* EASY UPDATES - longer, goes on bottom */
+  }
+
+  /* Scale: "GLOBAL CDN" (10) -> "MULTI-LOCATION SEO" (18) */
+  .industry-card:nth-child(6) .industry-stats .stat:nth-child(1) {
+    order: 1; /* GLOBAL CDN - shorter, goes on top */
+  }
+  .industry-card:nth-child(6) .industry-stats .stat:nth-child(2) {
+    order: 2; /* MULTI-LOCATION SEO - longer, goes on bottom */
   }
 
   .client-categories {
